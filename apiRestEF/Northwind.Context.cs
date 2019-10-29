@@ -24,7 +24,7 @@ namespace apiRestEF
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            throw new UnintentionalCodeFirstException();
+            this.Configuration.LazyLoadingEnabled = false; // pour limiter les liens que entity va envoyé
         }
     
         public virtual DbSet<Category> Categories { get; set; }
